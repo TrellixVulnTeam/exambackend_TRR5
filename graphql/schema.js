@@ -17,7 +17,7 @@ module.exports = buildSchema(`
     }
 
     type RootQuery {
-        getLinks: String
+        getAllLinks: [Link!]!
     }
 
     schema {

@@ -1,7 +1,6 @@
 const Link = require("../models/link");
 
 module.exports = {
-  hello: () => "Hello world",
   createLink: async function ({ userInput }, req) {
     const result = await Link.create({
       text: userInput.link,
@@ -12,5 +11,14 @@ module.exports = {
       link: result.text,
       slug: result.slug,
     };
+  },
+
+  getAllLinks: async function () {
+    const result = await Link.findAll();
+    const links = [];
+    result.forEach((link) => {
+      links.push({ link: link.text, slug: link.slug, id: link.id });
+    });
+    return links;
   },
 };
