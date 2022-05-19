@@ -1,16 +1,16 @@
-const Product = require("../models/product");
+const Link = require("../models/link");
 
 module.exports = {
   hello: () => "Hello world",
-  createUser: async function ({ userInput }, req) {
-    const prod = await Product.create({
-      title: userInput.name,
+  createLink: async function ({ userInput }, req) {
+    const result = await Link.create({
+      text: userInput.link,
+      slug: "http://localhost:3001/testsl",
     });
-    console.log("I am in here", prod);
+    console.log("created a link");
     return {
-      email: prod.title,
-      name: prod.id,
-      password: "asasasas",
+      link: result.text,
+      slug: result.slug,
     };
   },
 };
