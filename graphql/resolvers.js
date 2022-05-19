@@ -10,6 +10,7 @@ module.exports = {
     return {
       link: result.text,
       slug: result.slug,
+      id: result.id,
     };
   },
 

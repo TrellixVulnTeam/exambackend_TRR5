@@ -5,6 +5,7 @@ module.exports = buildSchema(`
     type Link {
         link: String!
         slug: String!
+        id: Int!
     }
 
     input UserInputData {
