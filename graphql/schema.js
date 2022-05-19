@@ -10,7 +10,7 @@ module.exports = buildSchema(`
 
     input UserInputData {
         link: String!
-        customSlug: String
+        slug: String
     }
 
     type rootMutation {
